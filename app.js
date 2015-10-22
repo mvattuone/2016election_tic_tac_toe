@@ -16,12 +16,6 @@ var app = {
         this.spaces = this.board.children,
         this.setGameHandlers();
     },
-    setSetupHandlers: function() { 
-        var self = this;
-        this.characterse.addEventListener('click', function(e) { 
-            self.initRound();
-        }, false);
-    },
     chooseCharacters: function() { 
         this.info_msg = this.setup.querySelector('.info');
         this.overlay.className = "active";
@@ -88,7 +82,9 @@ var app = {
     setGameHandlers: function() { 
         var self = this;
         board.addEventListener('click', function(e) { 
-            self.initRound();
+            if (e.target.classList.length <= 0) {
+                self.initRound();
+            }
         }, false);
     },
     checkStatus: function(spaces) {
@@ -122,7 +118,7 @@ var app = {
         }
 
         winner = this.opponentTurn();
-        alert(winner);
+        
         if (winner) {
             var opponent = this.player.charAt(0).toUpperCase() + this.player.slice(1),
                 again = confirm(opponent + " wins. Play again?");
