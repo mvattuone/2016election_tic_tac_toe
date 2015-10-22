@@ -1,0 +1,73 @@
+#board {
+    width:600px;
+    height:600px;
+    margin:0 auto;
+    padding:0;
+    list-style-type:none;
+    font-size:0px; /* fukkin whitespace */
+}
+
+#board li {
+    display:inline-block;
+    width:200px;
+    height:200px;
+    margin:0;
+    padding:0;
+    border: 3px solid black;
+    box-sizing:border-box;
+    vertical-align: top;
+    text-align: center;
+    background-size:contain;
+    background-repeat:no-repeat;
+}
+
+#overlay {
+    display:none;
+    background:rgba(0,0,0,0.4);
+    width:100%;
+    height:100%;
+    position:absolute;
+    top:0; left:0;
+    z-index:2;
+}
+
+#setup {
+    display:none;
+    width:500px;
+    height:500px;
+    position:absolute;
+    left: 50%; top:50%;
+    margin-left:-250px; margin-top:-250px;
+    z-index:2;
+    padding:20px;
+    background:white;
+}
+
+.active {
+    display:block !important;
+}
+
+#setup .character {
+    width:150px;
+    height:150px;
+    display:inline-block;
+    background-size:contain;
+    background-repeat:no-repeat;
+}
+
+.bernie {
+    background-image:url(img/bernie.png);
+}
+
+.character.selected.player {
+    border:5px solid blue;
+}
+
+.character.selected.opponent {
+    border:5px solid red;
+}
+
+
+.donald {
+    background-image:url(img/donald.png);
+}
